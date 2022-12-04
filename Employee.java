@@ -42,6 +42,10 @@ public class Employee {
         return this.salary;
     }
 
+    public int getId(){
+        return this.id;
+    }
+
     public void setDepartment(int department){
         if (department > 0 && department < 6)
             this.department = department;
