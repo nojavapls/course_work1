@@ -290,8 +290,10 @@ public class EmployeeBook {
             String secondName = remPeople.next();
             String surname = remPeople.next();
             if (people.size() != 0) {
+                System.out.println("HERE");
                 for (int i = 0; i < people.size(); i++) {
                     if (people.get(i).getName().equals(name) && people.get(i).getSecondName().equals(secondName) && people.get(i).getSurname().equals(surname)) {
+                        System.out.println("QUQU");
                         if (subject.equals("salary")) {
                             System.out.printf("Enter salary to set: ");
                             int salary = remPeople.nextInt();
