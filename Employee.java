@@ -1,4 +1,5 @@
 import java.lang.constant.Constable;
+import java.util.Objects;
 
 public class Employee {
 
@@ -56,6 +57,15 @@ public class Employee {
     public void setSalary(int salary){
         this.salary = salary;
     }
+
+    public boolean equals(Employee Em1) {
+        return(this == Em1);
+    }
+    public boolean equalsHashCode(Employee Em1) {
+        return(this.hashCode() == Em1.hashCode());
+    }
+
+
 
     public String toString()
     {
