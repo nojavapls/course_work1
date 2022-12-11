@@ -16,10 +16,8 @@ public class EmployeeBook {
         if (people.size() != 0) {
             System.out.println("List of employees of department " + department + ": ");
             while (a < people.size()) {
-                if (people.get(a) != null) {
-                    if (people.get(a).getDepartment() == department) {
+                if (people.get(a) != null && (people.get(a).getDepartment() == department)) {
                         System.out.println(people.get(a).toStringDepartment());
-                    }
                     a++;
                 }
             }
@@ -32,11 +30,9 @@ public class EmployeeBook {
         if (people.size() != 0) {
             System.out.println("List of employees with salary less than " + compare + ": ");
             while (a < people.size()) {
-                if (people.get(a) != null) {
-                    if (people.get(a).getSalary() < compare) {
+                if (people.get(a) != null && (people.get(a).getSalary() < compare)) {
                     System.out.println(people.get(a).toStringId());
                     flag = true;
-                }
                 a++;
             }
         }
@@ -51,8 +47,7 @@ public class EmployeeBook {
         if (people.size() != 0) {
             System.out.println("List of employees with salary more or equal " + compare + ": ");
             while (a < people.size()) {
-                if (people.get(a) != null) {
-                if (people.get(a).getSalary() >= compare) {
+                if (people.get(a) != null && (people.get(a).getSalary() >= compare)) {
                     flag = true;
                     System.out.println(people.get(a).toStringId());
                 }
@@ -61,8 +56,8 @@ public class EmployeeBook {
         }
             if (flag == false)
                 System.out.println("No employee with salary more or equal "+compare);
-        }
     }
+
 
     public static void getAllSalary(ArrayList<Employee> people) {
 
@@ -83,10 +78,8 @@ public class EmployeeBook {
         int a = 0;
         if (people.size() != 0) {
             while (a < people.size()) {
-                if (people.get(a) != null) {
-                    if (people.get(a).getDepartment() == department) {
+                if (people.get(a) != null && (people.get(a).getDepartment() == department)) {
                         allSalary += people.get(a).getSalary();
-                    }
                 }
                 a++;
             }
@@ -116,14 +109,12 @@ public class EmployeeBook {
         int a = 0;
         if (people.size() != 0) {
             while (a < people.size()) {
-                if (people.get(a) != null) {
-                    if (people.get(a).getDepartment() == department) {
+                if (people.get(a) != null && (people.get(a).getDepartment() == department)) {
                         allSalary += people.get(a).getSalary();
                         counter++;
                     }
                     a++;
                 }
-            }
             if (counter > 0)
                 System.out.println("Average salary among employees in department " + department + " is: " + allSalary / counter);
             else
@@ -149,12 +140,11 @@ public class EmployeeBook {
         int a = 0;
         if (people.size() != 0) {
             while (a < people.size()) {
-                if (people.get(a) != null) {
-                if (people.get(a).getDepartment() == department)
+                if (people.get(a) != null && (people.get(a).getDepartment() == department)) {
                     people.get(a).setSalary(people.get(a).getSalary() + people.get(a).getSalary() / 100 * percent);
-                a++;
+                    a++;
+                }
             }
-        }
             System.out.println("All salary for employees in department " + department + " are indexed on " + percent + "% percents. Congrants!");
         }
     }

@@ -58,13 +58,19 @@ public class Employee {
         this.salary = salary;
     }
 
-    public boolean equals(Employee Em1) {
-        return(this == Em1);
-    }
-    public boolean equalsHashCode(Employee Em1) {
-        return(this.hashCode() == Em1.hashCode());
-    }
 
+    public boolean equals(Employee Em1){
+        if (this == Em1) return true;
+        if (Em1 == null || getClass() != Em1.getClass()) return false;
+        Employee man = (Employee) Em1;
+        return (this.name.equals(man.name) && this.surname.equals(man.surname) && this.secondName.equals(man.secondName) && (this.salary == man.salary) && (this.department == man.department));
+    }
+    public int hashCode(Employee Em1) {
+        if (this != null)
+            return java.util.Objects.hash(this.name, this.secondName, this.department, this.surname, this.salary, this.id);
+        else
+            throw new IllegalArgumentException("NUll object");
+    }
 
 
     public String toString()
