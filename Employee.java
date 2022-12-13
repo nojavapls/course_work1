@@ -59,12 +59,15 @@ public class Employee {
     }
 
 
+    @Override:
     public boolean equals(Employee Em1){
         if (this == Em1) return true;
         if (Em1 == null || getClass() != Em1.getClass()) return false;
         Employee man = (Employee) Em1;
         return (this.name.equals(man.name) && this.surname.equals(man.surname) && this.secondName.equals(man.secondName) && (this.salary == man.salary) && (this.department == man.department));
     }
+
+    @Override:
     public int hashCode(Employee Em1) {
         if (this != null)
             return java.util.Objects.hash(this.name, this.secondName, this.department, this.surname, this.salary, this.id);
